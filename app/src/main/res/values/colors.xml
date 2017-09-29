@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yeller">#e1cf0b</color>
+    <color name="mehBlue">#3c72bf</color>
+    <color name="mehBlueUnselect">#6ba3f2</color>
+    <color name="white">#ffffff</color>
+</resources>
