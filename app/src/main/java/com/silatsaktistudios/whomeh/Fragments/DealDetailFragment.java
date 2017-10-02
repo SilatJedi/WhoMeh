@@ -5,12 +5,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.silatsaktistudios.whomeh.Models.Deal;
 import com.silatsaktistudios.whomeh.R;
+import com.squareup.picasso.Picasso;
 
 import io.realm.Realm;
 
@@ -52,11 +55,29 @@ public class DealDetailFragment extends Fragment {
         title.setText(deal.getTitle());
 
         LinearLayout picContainer = (LinearLayout) v.findViewById(R.id.dealPicContainer);
-        ScrollView picScrollView = (ScrollView) v.findViewById(R.id.dealPicContainerScrollView);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(picScrollView.getWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(5,5,5,5);
         for (int i = 0; i < deal.getPhotos().size(); i++) {
-
+            ImageView imageView = new ImageView(getActivity());
+            imageView.setLayoutParams(layoutParams);
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            Picasso.with(getActivity())
+                    .load(deal.getPhotos().get(i).getUrl())
+                    .resize(400, 400)
+                    .centerInside()
+                    .into(imageView);
+            picContainer.addView(imageView);
         }
+
+        TextView featureTextView = (TextView) v.findViewById(R.id.dealFeatureText);
+        featureTextView.setText(deal.getFeatures());
+
+        TextView specTextView = (TextView) v.findViewById(R.id.dealSpecText);
+        specTextView.setText(deal.getSpecifications());
+
+        TextView soldTextView = (TextView) v.findViewById(R.id.dealSoldText);
+        soldTextView.setText(deal.getSoldOutDate().toString());
+
         return v;
     }
 }
