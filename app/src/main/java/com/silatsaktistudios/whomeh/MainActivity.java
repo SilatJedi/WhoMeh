@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements GetDealListener {
             public boolean onTabSelected(int position, boolean wasSelected) {
                 switch (position) {
                     case 0: //daily deal
-                        FragmentHelper.setFragment(MainActivity.this, DealDetailFragment.dailyDeal(), R.id.fragmentContainer);
+                        FragmentHelper.setFragment(MainActivity.this, DealDetailFragment.newInstance(null), R.id.fragmentContainer);
                         break;
                     case 1: //history
                         FragmentHelper.setFragment(MainActivity.this, HistoryFragment.newInstance(), R.id.fragmentContainer);
@@ -65,6 +65,6 @@ public class MainActivity extends AppCompatActivity implements GetDealListener {
     }
 
     public void onGetDeal() {
-        FragmentHelper.setFragment(MainActivity.this, DealDetailFragment.dailyDeal(), R.id.fragmentContainer);
+        FragmentHelper.setFragment(MainActivity.this, DealDetailFragment.newInstance(null), R.id.fragmentContainer);
     }
 }

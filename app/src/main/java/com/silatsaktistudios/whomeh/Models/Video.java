@@ -5,8 +5,10 @@ import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by SilatJedi on 9/29/17.
+ *
  */
 
+@SuppressWarnings("unused")
 public class Video extends RealmObject {
     @PrimaryKey
     private String id;

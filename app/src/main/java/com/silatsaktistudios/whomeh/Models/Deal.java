@@ -1,6 +1,5 @@
 package com.silatsaktistudios.whomeh.Models;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 import io.realm.RealmList;
@@ -9,8 +8,10 @@ import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by SilatJedi on 9/29/17.
+ *
  */
 
+@SuppressWarnings("unused")
 public class Deal extends RealmObject {
     @PrimaryKey
     private String id;

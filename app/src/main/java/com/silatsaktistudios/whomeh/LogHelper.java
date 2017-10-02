@@ -4,9 +4,11 @@ import android.util.Log;
 
 /**
  * Created by SilatJedi on 9/29/17.
+ *
  */
 
-public class LogHelper {
+@SuppressWarnings("unused | WeakerAccess")
+class LogHelper {
 
     public static String getLogTag() {
         StackTraceElement ste = new Exception().getStackTrace()[2];

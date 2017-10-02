@@ -5,6 +5,7 @@ import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by SilatJedi on 9/29/17.
+ *
  */
 
 public class Photo extends RealmObject {
@@ -16,6 +17,7 @@ public class Photo extends RealmObject {
         setUrl(url);
     }
 
+    @SuppressWarnings("unused")
     public String getUrl() {
         return url;
     }
