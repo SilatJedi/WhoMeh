@@ -76,7 +76,10 @@ public class DealDetailFragment extends Fragment {
         specTextView.setText(deal.getSpecifications());
 
         TextView soldTextView = (TextView) v.findViewById(R.id.dealSoldText);
-        soldTextView.setText(deal.getSoldOutDate().toString());
+        soldTextView.setText(
+                deal.getSoldOutDate() == null
+                        ? "Still Available"
+                        : deal.getSoldOutDate().toString());
 
         return v;
     }
